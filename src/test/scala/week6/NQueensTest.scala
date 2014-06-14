@@ -7,7 +7,7 @@ class NQueensTest extends WordSpec with ShouldMatchers {
 
     "NQueens" should {
         "Place 4 queens on a chess board without threatening each other" in {
-            val solutions = NQueens.nqueens(4)
+            val solutions = NQueens2(4)
             solutions should (contain (List(2, 0, 3, 1)) and (contain (List(1, 3, 0, 2))))
         }
         
@@ -36,6 +36,16 @@ class NQueensTest extends WordSpec with ShouldMatchers {
             } yield (x, y)
             
             l should (contain((2, 2)) and (contain(3, 1)))
+        }
+        
+        "Experiment with Take" in {
+            val l = List (1, 2, 3, 4)
+            l take 2 should equal (List(1, 2))
+        }
+        
+        "Experiment with Drop" in {
+            val l = List (1, 2, 3, 4)
+            l drop 2 should equal (List(3, 4))
         }
         
     }
